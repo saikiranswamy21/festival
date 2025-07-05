@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact | Your Business</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you!</p>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="container">
+    <div class="card">
+      <h2>Send a Message</h2>
+      <form action="https://formspree.io/f/mrbkvkao" method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label>Email:</label><br>
+        <input type="email" name="email" required><br><br>
+
+        <label>Message:</label><br>
+        <textarea name="message" rows="5" required></textarea><br><br>
+
+        <button type="submit">Send</button>
+      </form>
+      <p><small>* Form handled securely by Formspree.</small></p>
+    </div>
+  </div>
+  <footer>
+    &copy; 2025 Your Business. All rights reserved.
+  </footer>
+</body>
+</html>
