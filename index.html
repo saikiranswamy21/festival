@@ -1,28 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>SHEHAI 22 Groups</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Festival | Celebrate With Us</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="home-bg">
+
   <header>
-    <h1>Festival.com</h1>
-    <p>Professional Services You Can Trust </p>
+    <h1>Festival</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="purchase.html">Shop</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="container">
-    <div class="card">
-      <h2>Welcome!</h2>
-      <p>This is the home page of your small business website. Use this space to introduce your brand.</p>
-    </div>
+
+  <main>
+    <section class="hero">
+      <h2>Celebrate Every Festival with Joy</h2>
+      <p>Order pooja kits, gifts, and traditional items with just a click!</p>
+      <a href="purchase.html" class="btn">Shop Now</a>
+    </section>
+
+    <section class="content">
+      <h2>🌼 Upcoming Indian Festivals</h2>
+      <div class="festival-list">
+        <div class="festival-item">
+          <h3>Diwali</h3>
+          <p>Festival of lights celebrated with lamps, sweets, and prayers to Goddess Lakshmi.</p>
+        </div>
+        <div class="festival-item">
+          <h3>Holi</h3>
+          <p>Festival of colors signifying the victory of good over evil and the arrival of spring.</p>
+        </div>
+        <div class="festival-item">
+          <h3>Raksha Bandhan</h3>
+          <p>Celebrates the sacred bond between brothers and sisters through the tying of a rakhi.</p>
+        </div>
+        <div class="festival-item">
+          <h3>Ganesh Chaturthi</h3>
+          <p>Marks the birth of Lord Ganesha, celebrated with idols, prayers, and immersion rituals.</p>
+        </div>
+        <div class="festival-item">
+          <h3>Navratri</h3>
+          <p>Nine nights of devotion, dance, and worship of Goddess Durga in her nine forms.</p>
+        </div>
+        <div class="festival-item">
+          <h3>Eid</h3>
+          <p>Muslim festival of charity, gratitude, and family celebration after the holy month of Ramadan.</p>
+        </div>
+      </div>
+    </section>
+    <section class="content">
+  <h2>🌼 Explore Indian Festivals</h2>
+  <div class="festival-list">
+    <button class="festival-btn" onclick="showFestival('diwali')">Diwali</button>
+    <button class="festival-btn" onclick="showFestival('holi')">Holi</button>
+    <button class="festival-btn" onclick="showFestival('raksha')">Raksha Bandhan</button>
+    <button class="festival-btn" onclick="showFestival('ganesh')">Ganesh Chaturthi</button>
+    <button class="festival-btn" onclick="showFestival('navratri')">Navratri</button>
+    <button class="festival-btn" onclick="showFestival('eid')">Eid</button>
   </div>
+
+  <div id="festival-detail" class="festival-detail"></div>
+</section>
+
+  </main>
+
   <footer>
-    &copy; 2025 Your Business. All rights reserved.
+    <p>&copy; 2025 Festival | Embracing Culture</p>
   </footer>
+  <script>
+  const festivalInfo = {
+    diwali: {
+      title: "Diwali – Festival of Lights",
+      description: "Diwali is one of the most important Hindu festivals, symbolizing the victory of light over darkness. Homes are decorated with lamps, rangolis, and sweets are shared among family and friends.",
+      products: [
+        { name: "Diwali Pooja Kit", price: "₹499" },
+        { name: "Decorative Diyas (Set of 6)", price: "₹199" }
+      ]
+    },
+    holi: {
+      title: "Holi – Festival of Colors",
+      description: "Holi marks the arrival of spring and celebrates love, laughter, and colors. People play with vibrant powders, enjoy sweets like gujiya, and come together in joy.",
+      products: [
+        { name: "Herbal Colors Pack", price: "₹299" },
+        { name: "Holi Celebration Kit", price: "₹399" }
+      ]
+    },
+    raksha: {
+      title: "Raksha Bandhan – Bond of Protection",
+      description: "Raksha Bandhan celebrates the bond between siblings. Sisters tie rakhi on brothers’ wrists, praying for their long life while brothers promise protection and gift blessings.",
+      products: [
+        { name: "Rakhi Combo Set", price: "₹249" },
+        { name: "Roli-Chawal Thali", price: "₹149" }
+      ]
+    },
+    ganesh: {
+      title: "Ganesh Chaturthi – Lord Ganesha's Blessings",
+      description: "A vibrant festival celebrating the birth of Lord Ganesha with prayers, sweets like modak, and idol immersions.",
+      products: [
+        { name: "Ganesh Idol + Pooja Set", price: "₹599" }
+      ]
+    },
+    navratri: {
+      title: "Navratri – Nine Nights of Devotion",
+      description: "Dedicated to the nine forms of Goddess Durga, this festival is marked by fasting, prayers, Garba, and vibrant celebrations across India.",
+      products: [
+        { name: "Navratri Pooja Kit", price: "₹449" },
+        { name: "Garba Dandiya Set", price: "₹199" }
+      ]
+    },
+    eid: {
+      title: "Eid – Festival of Gratitude",
+      description: "A sacred Muslim festival celebrated after Ramadan, marked by prayer, charity, and feasting with loved ones.",
+      products: [
+        { name: "Eid Gift Hamper", price: "₹699" }
+      ]
+    }
+  };
+
+  function showFestival(festivalKey) {
+    const festival = festivalInfo[festivalKey];
+    if (!festival) return;
+
+    const productList = festival.products.map(p =>
+      `<li>${p.name} – <strong>${p.price}</strong></li>`
+    ).join('');
+
+    document.getElementById("festival-detail").innerHTML = `
+      <div class="festival-box">
+        <h3>${festival.title}</h3>
+        <p>${festival.description}</p>
+        <h4>Related Products:</h4>
+        <ul>${productList}</ul>
+      </div>
+    `;
+  }
+</script>
+
+
 </body>
 </html>
