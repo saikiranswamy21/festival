@@ -1,40 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Contact | Your Business</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | Festival</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Contact Us</h1>
-    <p>We’d love to hear from you!</p>
+    <h1>Festival</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="purchase.html">Shop</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-  <div class="container">
-    <div class="card">
-      <h2>Send a Message</h2>
-      <form action="https://formspree.io/f/mrbkvkao" method="POST">
-        <label>Name:</label><br>
-        <input type="text" name="name" required><br><br>
 
-        <label>Email:</label><br>
-        <input type="email" name="email" required><br><br>
+  <main class="content">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </main>
 
-        <label>Message:</label><br>
-        <textarea name="message" rows="5" required></textarea><br><br>
-
-        <button type="submit">Send</button>
-      </form>
-      <p><small>* Form handled securely by Formspree.</small></p>
-    </div>
-  </div>
   <footer>
-    &copy; 2025 Your Business. All rights reserved.
+    <p>&copy; 2025 Festival | Embracing Culture</p>
   </footer>
 </body>
 </html>
